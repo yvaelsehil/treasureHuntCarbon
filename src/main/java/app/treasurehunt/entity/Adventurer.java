@@ -62,7 +62,7 @@ public class Adventurer {
         this.treasuresFound = treasuresFound;
     }
 
-    public void incrementTreasuresFound(){
+    public void incrementTreasuresFound() {
         this.treasuresFound++;
     }
 

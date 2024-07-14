@@ -10,10 +10,6 @@ public class TreasureHuntSimulation {
     private WorldMap worldMap;
     private List<Adventurer> adventurerList;
 
-    public TreasureHuntSimulation() {
-        this(null, null);
-    }
-
     public TreasureHuntSimulation(WorldMap worldMap, List<Adventurer> adventurerList) {
 
         this.worldMap = worldMap;
@@ -21,7 +17,7 @@ public class TreasureHuntSimulation {
     }
 
     public void run() {
-        int maxStep = this.GetMaxStep();
+        int maxStep = this.getMaxStep();
         for (int i = 0; i < maxStep; i++) {
             step(i);
         }
@@ -57,11 +53,11 @@ public class TreasureHuntSimulation {
             case S -> y += 1;
         }
 
-        if (isMoveValid(x, y)) {
+        if (this.isMoveValid(x, y)) {
             adventurer.setX(x);
             adventurer.setY(y);
             Tile tile = this.worldMap.getTile(x, y);
-            if (tile.getTreasures() > 0){
+            if (tile.getTreasures() > 0) {
                 adventurer.incrementTreasuresFound();
                 tile.decrementTreasure();
             }
@@ -74,12 +70,24 @@ public class TreasureHuntSimulation {
         ) {
             return false;
         }
-        for(Adventurer adventurer : this.adventurerList){
-            if (adventurer.getX() == x && adventurer.getY() == y){
+        for (Adventurer adventurer : this.adventurerList) {
+            if (adventurer.getX() == x && adventurer.getY() == y) {
                 return false;
             }
         }
         return true;
+    }
+
+    public int getMaxStep() {
+        int max = 0;
+        if (this.adventurerList != null) {
+            for (Adventurer adventurer : this.adventurerList) {
+                if (adventurer.getPath().length() > max) {
+                    max = adventurer.getPath().length();
+                }
+            }
+        }
+        return max;
     }
 
     public WorldMap getWorldMap() {
@@ -92,19 +100,6 @@ public class TreasureHuntSimulation {
 
     public List<Adventurer> getAdventurerList() {
         return adventurerList;
-    }
-
-    public int GetMaxStep() {
-        int max = 0;
-        if (this.adventurerList != null) {
-            for (Adventurer adventurer : this.adventurerList) {
-                if (adventurer.getPath().length() > max) {
-                    max = adventurer.getPath().length();
-                }
-            }
-            ;
-        }
-        return max;
     }
 
     public void setAdventurerList(List<Adventurer> adventurerList) {
