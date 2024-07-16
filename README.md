@@ -10,13 +10,18 @@ Ce projet est une simulation d'une carte aux trésors en Java. Il lit une config
 ## Configurer Gradle
    Assurez-vous que vous avez Gradle installé sur votre machine. Si ce n'est pas le cas, vous pouvez le télécharger et l'installer depuis le site officiel de Gradle.
 
-Build le projet 
+## Utiliser le projet
+Pour UNIX (Linux, macOS) :
 
 ``````
-$> gradlew build
-$> java -jar build/libs/treasureHuntCarbon-1.0-SNAPSHOT.jar <map-file> [<output-file>]
+chmod +x run.sh
+./run.sh <path/to/inputFile> [<path/to/outputFile>]
 ``````
+Pour Windows :
 
+``````
+run.bat <path\to\inputFile> [<path\to\outputFile>]
+``````
 ## Ficher d'entrée
 
 Voici un exemple de contenu pour ce fichier :
