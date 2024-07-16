@@ -15,7 +15,6 @@ public class FileReader {
     /**
      * @param path filepath
      * @return TreasureHuntSimulation
-     * @throws IOException
      */
     public static TreasureHuntSimulation read(String path) throws IOException {
         List<String> lines = Files.readAllLines(Path.of(path));
@@ -59,6 +58,4 @@ public class FileReader {
         }
         return new TreasureHuntSimulation(worldMap, adventurers);
     }
-
-
 }

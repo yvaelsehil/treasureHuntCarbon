@@ -34,6 +34,15 @@ class FileWriterTest {
 
         Adventurer adventurer = new Adventurer("toto", 0,0, "S", "");
 
+        String expectedOutputContent = String.join(System.lineSeparator(),
+                "C - 10 - 10",
+                "M - 1 - 3",
+                "T - 2 - 2 - 4",
+                "A - toto - 0 - 0 - S - 0"
+        );
+
+        // Test begins
+
         FileWriter.writeFile(worldMap, Collections.singletonList(adventurer), TEST_FILE_PATH);
 
         File writenFile = new File(TEST_FILE_PATH);
@@ -41,12 +50,7 @@ class FileWriterTest {
         assertTrue(writenFile.exists());
 
         String content = Files.readString(writenFile.toPath());
-        String expectedContent = String.join(System.lineSeparator(),
-                "C - 10 - 10",
-                "M - 1 - 3",
-                "T - 2 - 2 - 4",
-                "A - toto - 0 - 0 - S - 0"
-        );
-        assertEquals(expectedContent, content.trim());
+
+        assertEquals(expectedOutputContent, content.trim());
     }
 }
