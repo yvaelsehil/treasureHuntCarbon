@@ -20,7 +20,7 @@ public class Main {
             FileWriter.writeFile(treasureHuntSimulation.getWorldMap(), treasureHuntSimulation.getAdventurerList(), outputPath);
         } catch (IOException e) {
             e.printStackTrace();
+            System.exit(1);
         }
-
     }
 }

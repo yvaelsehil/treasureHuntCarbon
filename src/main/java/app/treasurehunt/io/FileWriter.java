@@ -3,7 +3,6 @@ package app.treasurehunt.io;
 import app.treasurehunt.entity.Adventurer;
 import app.treasurehunt.entity.Tile;
 import app.treasurehunt.entity.WorldMap;
-import app.treasurehunt.simulation.TreasureHuntSimulation;
 
 import java.io.IOException;
 import java.nio.file.Files;

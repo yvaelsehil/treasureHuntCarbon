@@ -1,9 +1,5 @@
 package app.treasurehunt.entity;
 
-
-import java.util.ArrayList;
-import java.util.Stack;
-
 public class Adventurer {
 
     private String name;

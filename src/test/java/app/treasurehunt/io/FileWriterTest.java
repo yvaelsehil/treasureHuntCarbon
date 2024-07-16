@@ -3,7 +3,6 @@ package app.treasurehunt.io;
 import app.treasurehunt.entity.Adventurer;
 import app.treasurehunt.entity.WorldMap;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

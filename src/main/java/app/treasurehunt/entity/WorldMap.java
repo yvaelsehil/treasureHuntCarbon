@@ -1,6 +1,5 @@
 package app.treasurehunt.entity;
 
-
 public class WorldMap {
 
     private final int length;
