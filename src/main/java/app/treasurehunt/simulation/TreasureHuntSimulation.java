@@ -78,7 +78,7 @@ public class TreasureHuntSimulation {
         return true;
     }
 
-    public int getMaxStep() {
+    private int getMaxStep() {
         int max = 0;
         if (this.adventurerList != null) {
             for (Adventurer adventurer : this.adventurerList) {

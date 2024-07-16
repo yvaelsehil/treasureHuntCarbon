@@ -5,7 +5,7 @@ public class MainTest {
     @Test
     public void verifyNoExceptionThrown() {
         Main.main(new String[]{
-                "src/test/ressources/maps/map1"
+                "src/test/resources/maps/map"
         });
     }
 }
