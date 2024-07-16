@@ -20,6 +20,16 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+tasks.register('runSimulation', JavaExec) {
+    group = 'application'
+    description = 'Runs the Treasure Hunt Simulation'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'app.treasurehunt.Main'
+    def inputFile = project.hasProperty('inputFile') ? project.inputFile : 'src/test/resources/maps/map'
+    def outputFile = project.hasProperty('outputFile') ? project.outputFile : 'output.txt'
+    args = [inputFile, outputFile]
+}
+
 test {
     useJUnitPlatform()
 }
