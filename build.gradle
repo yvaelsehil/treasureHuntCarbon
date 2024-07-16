@@ -2,6 +2,12 @@ plugins {
     id 'java'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'app.treasurehunt.Main'
+    }
+}
+
 group = 'app.treasurehunt'
 version = '1.0-SNAPSHOT'
 
